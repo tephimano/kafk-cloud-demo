@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        producer:
+          destination: message
+          contentType: application/json
+        consumer:
+          destination: message
+          contentType: application/json
+
+# The topic name(destination) should be the same because we write to and read from the same topic
+# broker : address of the kafka server to connect to
